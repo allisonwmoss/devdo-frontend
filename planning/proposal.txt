@@ -1,0 +1,61 @@
+Description
+
+I began this project as I have begun all of the others: Wondering what the heck I should build. As usual, I Googled "app ideas" and "things to code," which produced the same boring recycled list articles I've seen before. I have tried the Reddit group for app ideas, but found it somewhat unwelcoming and generally unhelpful. I found myself wishing there was a place that connected people who have inspiring app ideas with developers and students who want to build apps but need inspiration. Thus, the idea for DevDo was born. DevDo is a community where brilliant new app ideas meet the developers of their dreams.
+
+Users of DevDo are either Devs or Idea-Havers (might need to workshop that name, but you get the concept). All Users have an email and password. Idea-Havers can submit Ideas. Ideas must have a title, between 3-5 user stories/features, and at least one tag. They also have isBuilt and isInProgress properties, and an optional appLink property. An Idea must have one Idea-Haver and can have one or many Devs. Devs can choose many Ideas to work on.
+
+Devs can browse all app ideas, or filter by tags. Devs can choose an Idea to work on, which changes the isInProgress property of the Idea to true. Once they have chosen to work on the Idea, the Dev is able to send an email message to the Idea-Haver so that they can collaborate and ask questions if needed. Finally, the Dev will be able to mark the Idea as built once the project is complete, and add a link to the completed app for all to see.
+
+Technologies
+I will use Django and Postgres for the backend, React for the frontend, and AWS for deployment (which is also the new thing I will be teaching myself).
+
+User Stories
+
+MVP Goals
+
+As an Idea-Haver....
+
+I want to use a form to create my account.
+
+I want to submit my app idea with a title, goals, and tags.
+
+I want to be able to see if someone is working on my Idea.
+
+I want to be able to view all of my Ideas in one place.
+
+I want Devs to be able to reach out to me if they have questions or want to collaborate on the Idea.
+
+I want to browse and view other Ideas on DevDo.
+
+As a Dev...
+
+I want to use a form to create my account.
+
+I want to browse all Ideas on DevDo, or filter them by tags.
+
+I want to view the thumbnail for an Idea with its title and icons for each tag.
+
+I want to view a page with details about the Idea, including the title, tags, time it was posted, and user stories.
+
+I want to select Ideas to work on.
+
+I want to be able to view all of the Ideas I am working on in one place.
+
+I want to be able to contact the Idea-Haver who submitted an idea if I have questions or want to collaborate with them.
+
+Stretch Goals
+
+As a User, I want to use a link on the Idea to view the final deployed app if someone is done building it.
+
+As a Dev, I want to be able to update the Idea when I have finished building the app and include a link to the deployed app.
+
+As a User, I want to be able to be both a Dev and an Idea-Haver.
+
+As a User, I want to be able to vote on the difficulty or skill level of an Idea on a 3-point scale.
+
+As a Dev, I want to be able to filter or sort Ideas by difficulty level.
+
+As a User, I want to view only a limited number of ideas per page, rather than scrolling endlessly.
+
+Wireframes
+

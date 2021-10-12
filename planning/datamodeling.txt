@@ -1,0 +1,23 @@
+Users
+    ---email
+    ---password
+    ---type
+        ---Devs
+            ---Idea
+            ---Idea
+        ---Idea-Havers
+            ---Idea
+            ---Idea
+
+Ideas
+    ---title
+    ---user stories
+    ---date submitted
+    ---tags
+    ---is in progress
+    ---is built 
+    ---Idea Haver
+    ---Devs
+        ---Dev
+        ---Dev
+

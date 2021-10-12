@@ -1,0 +1,98 @@
+Summary
+
+This is a solo project of your choice. You may also choose your technology stack.
+You must include at least one technology that you learned on your own (something you were not taught in SEI). You may use the capstone modules in myGA if you wish to specialize in a particular development area.
+Project Proposals are due on Tuesday, October 12, 2021 at or before 4:00 PM.
+Project Deliverable is due on or before Monday, October 25, 2021 at or before 10:00 AM. Submit your project links via Google Classroom.
+Presentations will be on Monday, October 25, 2021 at 11:00 AM to the entire cohort.
+In order to receive support, you must fill out a troubleshooting issue. The next instructor in the support queue will respond to you in your issue.
+Overview
+
+You’ve come a long way, and it's time to show it.
+
+On Project 4, you get to call the shots and invent your own idea, choosing a solo project and the tools that are appropriate for what you want to build. Pull from everything you've learned so far, and tackle something that'll push you a little outside of your comfort zone. That new thing should be something you teach yourself. It can be a new tool, technology, framework, library or an entirely new stack! Just make sure that you can tackle learning about it and still fulfill all of the project requirements on time.
+
+Review your project proposal with your instructors before you become too invested in your idea so you can make sure it's something you can accomplish in the limited time we have. Building a proof of concept will go far to convince us and you that it's something you can tackle for your project. Your instructors will reach out to you to discuss your project idea after submission of your project proposal!
+
+Requirements
+
+Technical Requirements
+
+Your project must:
+
+Be a complete product.
+Implement thoughtful user stories
+Be deployed online
+Use something we didn't teach in class
+Submission
+
+DO NOT FORK THIS REPOSITORY! Create a new repository on your personal GitHub. Remember to create separate repos for your frontend and backend projects. Then, submit your project links to Google Classroom.
+
+You must turn in something before presentations begin. However, you are welcome (and encouraged) to continue working on your project after the course!
+
+Presentation
+
+You will present your final project on the last day of Project Week. Refer to the course schedule for the final presentation schedule.
+
+Necessary Deliverables
+
+Your submission must include all of the following:
+
+Project Idea and Initial Proof of Concept
+
+You must turn in a project proposal to the instructors by 4pm ET Tuesday, October 12, 2021.
+
+You need to submit:
+
+Your project idea (a brief 2-3 sentence description of your app)
+A list of your models and their properties
+A project proof of concept for your new technology you plan to use (optional).
+Final Project
+
+Your project is due on the last day of Project Week (Monday, October 25, 2021).
+
+The repository/repositories for your final project should include:
+
+A working project (built by you) that meets the technical requirements above.
+Frequent commits dating back to the very beginning of the project.
+A README.md file in the root of your repo that follows good standards of documentation (i.e. explanations of the technologies used, the approach taken, features, installation instructions, unsolved problems, etc.)
+A link to your hosted, working project in the URL section of your Github repo.
+Asking For Help
+
+GitHub Issues
+
+In order to receive support, you must fill out a troubleshooting issue. The next instructor in the support queue will respond to you in your issue.
+
+Some advice for how to write a good issue:
+
+How to Write A Good Bug Report? Tips and Tricks
+How to write a bug report that will make your engineers love you - Testlio
+Tips
+
+Implement one or two easy things, and one hard thing. The hard thing should be what stretches you out of your comfort zone, whether it's interfacing with an external API, loading a map with data points, drawing a graph, or any other challenging thing.
+Don’t get too caught up in too many awesome features – simple is always better. Build something impressive that does one thing well.
+Design first. Planning with user stories & wireframes before writing code means you won't get distracted changing your mind – you'll know what to build, and you can spend your time wisely by just building it.
+Don’t hesitate to write throwaway code to solve short term problems.
+Read the docs for whatever technologies / frameworks / APIs you use.
+Write your code DRY and build your APIs RESTful.
+Commit early, commit often. Don’t be afraid to break something because you can always go back in time to a previous version.
+Keep user stories small and well-defined, and remember – user stories focus on what a user needs, not what development tasks need accomplishing.
+Write code another developer wouldn't have to ask you about. Do your naming conventions make sense? Would another developer be able to look at your app and understand what everything is?
+Make it all well-formatted. Are you indenting consistently? Can we find the start and end of every div, curly brace, etc?
+Comment your code. Will someone understand what is going on in each block or function? Even if it's obvious, explaining the "what" and "why" means someone else can pick it up and get it.
+Write pseudocode before you write actual code. Thinking through the logic of something helps.
+Resources
+
+HackDesign (beginner's reference for thinking like a designer)
+Inspiration from former students
+Plagiarism
+
+Take a moment to re-familiarize yourself with the plagiarism policy, specifically on using work you find online and on work you do with other students.
+
+We give assignments like this to give you the opportunity to review the material in class in a practical manner. By building something using what you've learned in class, you'll be reviewing the material and gaining a deeper understanding of it.
+
+These assignments are similar to those you can expect when applying for a job, either in the form of a take-home coding challenge or an in-person technical interview. So it's important that you put in your best effort now and challenge yourself to do this assignment on your own.
+
+If you are struggling with the material, that's alright! That's why you're here. First, try reviewing the previous lessons and exercises. Go easy on yourself, you're still learning! If you're still struggling after that, come to office hours and ask an instructor for help. They're here to help you!
+
+Don't copy and paste from another source or another student or the solution branch. That's just going to put you at a disadvantage when you're interviewing for a job

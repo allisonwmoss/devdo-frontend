@@ -1,0 +1,10 @@
+Container
+    Landing page
+        New user form
+        User login form
+    Main view
+        Idea search/filter form
+        All Ideas
+            Idea thumbnail
+                Idea details
+    
