@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { APIURL } from '../config'
+import IdeaThumb from './IdeaThumb'
 
 export default function IdeaList() {
     const [ideas, setIdeas] = useState([])
@@ -32,7 +33,9 @@ export default function IdeaList() {
     return (
         <div className="container">
             {ideas.map(idea => (
-                <div key={idea._id}><h2>{idea.title}</h2></div>
+                <div key={idea._id}>
+                    <IdeaThumb idea={idea} />
+                </div>
             ))}
         </div>
     )

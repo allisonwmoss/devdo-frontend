@@ -38,7 +38,19 @@ export default function IdeaDetail({ match }) {
         )
     }
 
+    console.log(idea)
+
     return (
-        <h1>{idea.title}</h1>
+        <div>
+            <h1>{idea.title}</h1>
+            <p>posted {idea.posted} by {idea.poster} </p>
+            <div>tags: {idea.tags.map(tag => (
+                <p>#{tag}</p>
+            ))}</div>
+            <h2>As a user, I want to be able to...</h2>
+            <p>{idea.user_story}</p>
+            <h2>{idea.in_progress ? <p>{idea.dev} is developing this idea</p> : <p>develop this idea!</p>}</h2>
+        </div>
+
     )
 }
