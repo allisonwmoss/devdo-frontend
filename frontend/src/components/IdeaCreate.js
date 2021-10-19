@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { APIURL } from '../config'
-
+import IdeaForm from './IdeaForm'
 export default function IdeaCreate() {
     const initialIdeaState = {
         title: '',
@@ -44,6 +44,7 @@ export default function IdeaCreate() {
         <div>
             <h1>What's your idea?</h1>
             {error && <div className="alert alert-danger">Sorry, something went wrong. Please try again.</div>}
+            <IdeaForm idea={idea} handleChange={handleChange} handleSubmit={handleSubmit}></IdeaForm>
         </div>
 
     )
