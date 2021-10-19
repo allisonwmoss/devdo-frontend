@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import { APIURL } from '../config'
+import {
+    Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button
+} from 'reactstrap';
+
 
 export default function IdeaDetail({ match }) {
     const [deleted, setDeleted] = useState(false)
@@ -41,16 +46,20 @@ export default function IdeaDetail({ match }) {
     console.log(idea)
 
     return (
-        <div>
-            <h1>{idea.title}</h1>
-            <p>posted {idea.posted} by {idea.poster} </p>
-            <div>tags: {idea.tags.map(tag => (
-                <p>#{tag}</p>
-            ))}</div>
-            <h2>As a user, I want to be able to...</h2>
-            <p>{idea.user_story}</p>
-            <h2>{idea.in_progress ? <p>{idea.dev} is developing this idea</p> : <p>develop this idea!</p>}</h2>
-        </div>
-
+        <Card>
+            <CardBody>
+                <CardTitle tag="h1">{idea.title}</CardTitle>
+                <CardSubtitle tag="h3">posted on {idea.posted} by {idea.poster}</CardSubtitle>
+                <CardSubtitle tag="h4">tags</CardSubtitle>
+                <CardText>{idea.tags.map(tag => <div>#{tag}</div>)}</CardText>
+                <CardSubtitle tag="h3">
+                    As a user, I want to be able to...
+                </CardSubtitle>
+                <CardSubtitle tag="h3">
+                    ...{idea.user_story}
+                </CardSubtitle>
+                {idea.in_progress ? <Button disabled="true">{idea.dev} is developing this idea</Button> : <Button>Develop this idea!</Button>}
+            </CardBody>
+        </Card>
     )
 }
