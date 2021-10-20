@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import IdeaList from './components/IdeaList';
 import IdeaDetail from './components/IdeaDetail';
 import IdeaCreate from './components/IdeaCreate';
@@ -14,6 +14,9 @@ function App() {
     <div className="container">
       <Navig />
       <Switch>
+        <Route exact path="/">
+          <Redirect to="/ideas"></Redirect>
+        </Route>
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/logout' component={Logout} />

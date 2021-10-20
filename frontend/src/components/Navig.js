@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react'
+import { FRONTURL } from '../config';
 import {
     Navbar,
     NavbarBrand,
@@ -16,11 +17,11 @@ export default function Navig() {
     }, [])
     return (
         <Navbar>
-            <NavbarBrand href="/">DevDo</NavbarBrand>
-            <Nav className="mr-auto" navbar>
-                {isAuth === true ? (
-                    <Fragment>
-                        {' '}
+            {isAuth === true ? (
+                <Fragment>
+                    {' '}
+                    <NavbarBrand href="/ideas">DevDo</NavbarBrand>
+                    <Nav className="mr-auto" navbar>
                         <NavItem>
                             <NavLink href="/ideas">all ideas</NavLink>
                         </NavItem>
@@ -30,18 +31,19 @@ export default function Navig() {
                         <NavItem>
                             <NavLink href="/logout">log out</NavLink>
                         </NavItem>
-                    </Fragment>
-                ) : (
-                    <Fragment>
-                        {' '}
-                        <NavItem>
-                            <NavLink href="/login">log in</NavLink>
-                        </NavItem>
-                    </Fragment>
-                )
-                }
-
-            </Nav>
+                    </Nav>
+                </Fragment>
+            ) : (
+                <Fragment>
+                    {' '}
+                    <Navbar>
+                        <NavbarBrand>
+                            DevDo
+                        </NavbarBrand>
+                    </Navbar>
+                </Fragment>
+            )
+            }
         </Navbar>
     )
 }
