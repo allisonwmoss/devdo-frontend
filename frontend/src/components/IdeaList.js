@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { APIURL } from '../config'
+import { APIURL, FRONTURL } from '../config'
 import IdeaThumb from './IdeaThumb'
 
 export default function IdeaList() {
@@ -8,17 +8,21 @@ export default function IdeaList() {
     const [loading, setLoading] = useState(true)
     const url = `${APIURL}/ideas`
     useEffect(() => {
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                setIdeas(data)
-            })
-            .then(() => {
-                setLoading(false)
-            })
-            .catch(() => {
-                setError(true)
-            })
+        if (localStorage.getItem('token') == null) {
+            window.location.replace(`${FRONTURL}/login`);
+        } else {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    setIdeas(data)
+                })
+                .then(() => {
+                    setLoading(false)
+                })
+                .catch(() => {
+                    setError(true)
+                })
+        }
     }, [url])
     if (error) {
         return (

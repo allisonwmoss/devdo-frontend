@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { APIURL } from '../config';
+import { APIURL, FRONTURL } from '../config';
+
 const Signup = () => {
     const [email, setEmail] = useState('');
     const [password1, setPassword1] = useState('');
@@ -9,7 +10,7 @@ const Signup = () => {
 
     useEffect(() => {
         if (localStorage.getItem('token') !== null) {
-            window.location.replace('http://localhost:3000/dashboard');
+            window.location.replace(`${FRONTURL}/ideas`);
         } else {
             setLoading(false);
         }
@@ -36,7 +37,7 @@ const Signup = () => {
                 if (data.key) {
                     localStorage.clear();
                     localStorage.setItem('token', data.key);
-                    window.location.replace('http://localhost:3000/ideas');
+                    window.location.replace(`${FRONTURL}/ideas`);
                 } else {
                     setEmail('');
                     setPassword1('');

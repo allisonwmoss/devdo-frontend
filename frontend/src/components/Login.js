@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { APIURL } from '../config';
+import { APIURL, FRONTURL } from '../config';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -10,7 +11,7 @@ const Login = () => {
 
     useEffect(() => {
         if (localStorage.getItem('token') !== null) {
-            window.location.replace('http://localhost:3000/ideas');
+            window.location.replace(`${FRONTURL}/ideas`);
         } else {
             setLoading(false);
         }
@@ -36,7 +37,7 @@ const Login = () => {
                 if (data.key) {
                     localStorage.clear();
                     localStorage.setItem('token', data.key);
-                    window.location.replace('http://localhost:3000/ideas');
+                    window.location.replace(`${FRONTURL}/ideas`);
                 } else {
                     setEmail('');
                     setPassword('');
@@ -72,6 +73,15 @@ const Login = () => {
                     <br />
                     <input type='submit' value='Login' />
                 </form>
+            )}
+            {loading === false && (
+                <div>
+                    <h3>New to DevDo?</h3>
+                    <Link to="/signup">
+                        <Button>Create account</Button>
+                    </Link>
+                </div>
+
             )}
         </div>
     );
