@@ -14,7 +14,7 @@ export default function IdeaForm({ idea, handleSubmit, handleChange, handleChang
                 <Label for="user_story">As a user of this app, I want to...</Label>
                 <Input type="text" name="user_story" id="user_story" placeholder="...share, view, and comment on my friends' posts." value={idea.user_story} onChange={handleChange} required></Input>
             </FormGroup>
-            <FormGroup check>
+            {/* <FormGroup check>
                 <legend>tags:</legend>
                 <Label check>
                     <Input type="checkbox" name="tags" value="artificial intelligence (AI)" onChange={onChangeAi} />{' '}
@@ -56,7 +56,7 @@ export default function IdeaForm({ idea, handleSubmit, handleChange, handleChang
                     <Input type="checkbox" name="tags" value="virtual reality (VR)" />{' '}
                     virtual reality (VR)
                 </Label>
-            </FormGroup>
+            </FormGroup> */}
             <Button>submit idea</Button>
         </Form>
     )

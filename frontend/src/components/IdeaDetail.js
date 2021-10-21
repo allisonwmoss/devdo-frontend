@@ -43,6 +43,31 @@ export default function IdeaDetail({ match }) {
         )
     }
 
+    const developIdea = (e) => {
+        e.preventDefault()
+        const url = `${APIURL}/ideas/${match.params.id}`
+        const stuffToSend = {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+                'Authorization': `Token ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify({ ...idea, 'in_progress': true }),
+            credentials: 'include'
+        }
+        console.log(stuffToSend)
+        fetch(url, stuffToSend
+        )
+            .then(res => res.json())
+            // .then(data => {
+            //     setCreatedId(data.id)
+            // })
+            // .then(data => toggle())
+            .catch(() => {
+                setError(true)
+            })
+    }
+
     console.log(idea)
 
     return (
@@ -50,15 +75,16 @@ export default function IdeaDetail({ match }) {
             <CardBody>
                 <CardTitle tag="h1">{idea.title}</CardTitle>
                 <CardSubtitle tag="h3">posted on {idea.posted} by {idea.poster}</CardSubtitle>
-                <CardSubtitle tag="h4">tags</CardSubtitle>
-                <CardText>{idea.tags.map(tag => <div>#{tag}</div>)}</CardText>
+                {/* <CardSubtitle tag="h4">tags</CardSubtitle>
+                <CardText>{idea.tags.map(tag => <div>#{tag}</div>)}</CardText> */}
                 <CardSubtitle tag="h3">
                     As a user, I want to be able to...
                 </CardSubtitle>
                 <CardSubtitle tag="h3">
                     ...{idea.user_story}
                 </CardSubtitle>
-                {idea.in_progress ? <Button disabled="true">{idea.dev} is developing this idea</Button> : <Button>Develop this idea!</Button>}
+                {idea.in_progress ? <Button disabled="true">{idea.dev} is developing this idea</Button> : <Button onClick={developIdea}>Develop this idea!</Button>}
+                <Button >Edit this idea</Button>
             </CardBody>
         </Card>
     )
