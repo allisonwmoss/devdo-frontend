@@ -6,4 +6,4 @@ export const APIURL =
 export const FRONTURL =
     window.location.hostname === 'localhost'
         ? 'http://localhost:3000'
-        : 'replace this with the deployed app url';
+        : 'https://rocky-basin-95837.herokuapp.com/';
