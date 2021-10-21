@@ -18,7 +18,7 @@ const ModalExample = (props) => {
             <Modal isOpen={modal} toggle={toggle} >
                 <ModalHeader toggle={toggle}>Modal title</ModalHeader>
                 <ModalBody>
-                    <IdeaCreate />
+                    <IdeaCreate modal={modal} setModal={setModal} toggle={toggle} />
                 </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={toggle}>Do Something</Button>{' '}

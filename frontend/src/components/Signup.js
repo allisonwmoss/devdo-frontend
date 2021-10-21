@@ -3,6 +3,7 @@ import { APIURL, FRONTURL } from '../config';
 
 const Signup = () => {
     const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password1, setPassword1] = useState('');
     const [password2, setPassword2] = useState('');
     const [error, setError] = useState(false);
@@ -21,6 +22,7 @@ const Signup = () => {
 
         const user = {
             email: email,
+            username: username,
             password1: password1,
             password2: password2
         };
@@ -40,6 +42,7 @@ const Signup = () => {
                     window.location.replace(`${FRONTURL}/ideas`);
                 } else {
                     setEmail('');
+                    setUsername('');
                     setPassword1('');
                     setPassword2('');
                     localStorage.clear();
@@ -59,6 +62,15 @@ const Signup = () => {
                     type='email'
                     value={email}
                     onChange={e => setEmail(e.target.value)}
+                    required
+                />{' '}
+                <br />
+                <label htmlFor='username'>Username:</label> <br />
+                <input
+                    name='username'
+                    type='username'
+                    value={username}
+                    onChange={e => setUsername(e.target.value)}
                     required
                 />{' '}
                 <br />
