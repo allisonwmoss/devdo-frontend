@@ -6,7 +6,6 @@ import {
 } from 'reactstrap';
 
 export default function IdeaThumb({ idea }) {
-    console.log(idea)
     const url = `/ideas/${idea.id}`
     return (
 

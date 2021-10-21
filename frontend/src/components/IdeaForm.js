@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
+import { Button, Form, FormGroup, Input, Label, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 import { APIURL } from '../config'
 import { Redirect } from 'react-router-dom'
 
@@ -11,8 +11,8 @@ export default function IdeaForm({ idea, handleSubmit, handleChange }) {
                 <Input type="text" name="title" id="title" placeholder="describe this app in a few words" value={idea.title} onChange={handleChange} required></Input>
             </FormGroup>
             <FormGroup>
-                <Label for="userstory">As a user of this app, I want to...</Label>
-                <Input type="text" name="userstory" id="userstory" placeholder="...share, view, and comment on my friends' posts." value={idea.user_story} onChange={handleChange} required></Input>
+                <Label for="user_story">As a user of this app, I want to...</Label>
+                <Input type="text" name="user_story" id="user_story" placeholder="...share, view, and comment on my friends' posts." value={idea.user_story} onChange={handleChange} required></Input>
             </FormGroup>
             <FormGroup check value={idea.tags} onChange={handleChange}>
                 <legend>tags:</legend>
@@ -60,5 +60,9 @@ export default function IdeaForm({ idea, handleSubmit, handleChange }) {
             <Button>submit idea</Button>
         </Form>
     )
-
 }
+// }
+
+//what do i want here?
+    //I want a button somewhere on the page that opens a modal
+    //and i want that modal to contain the form
