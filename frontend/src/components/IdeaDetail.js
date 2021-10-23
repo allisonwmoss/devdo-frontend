@@ -5,6 +5,7 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import ModalExample from './Modal';
 
 
 export default function IdeaDetail({ match }) {
@@ -12,12 +13,12 @@ export default function IdeaDetail({ match }) {
     const [error, setError] = useState(false)
     const [idea, setIdea] = useState(null)
 
-    const onDeleteIdea = (e) => {
-        const url = `${APIURL}/ideas/${match.params.id}`
-        fetch(url, { method: 'DELETE' })
-            .then(res => { setDeleted(true) })
-            .catch(console.error)
-    }
+    // const onDeleteIdea = (e) => {
+    //     const url = `${APIURL}/ideas/${match.params.id}`
+    //     fetch(url, { method: 'DELETE' })
+    //         .then(res => { setDeleted(true) })
+    //         .catch(console.error)
+    // }
 
     useEffect(() => {
         const url = `${APIURL}/ideas/${match.params.id}`
@@ -29,9 +30,9 @@ export default function IdeaDetail({ match }) {
             })
     }, [match.params.id])
 
-    if (deleted) {
-        return <Redirect to="/ideas"></Redirect>
-    }
+    // if (deleted) {
+    //     return <Redirect to="/ideas"></Redirect>
+    // }
     if (error) {
         return (
             <div className="alert alert-danger">Sorry, something went wrong. Please try again.</div>
@@ -68,23 +69,23 @@ export default function IdeaDetail({ match }) {
             })
     }
 
-    console.log(idea)
+    console.log(`idea at idea detail: ${idea.title}`)
 
     return (
         <Card>
             <CardBody>
-                <CardTitle tag="h1">{idea.title}</CardTitle>
-                <CardSubtitle tag="h3">posted on {idea.posted} by {idea.poster}</CardSubtitle>
+                <CardTitle tag="h1" className="purpletext">{idea.title}</CardTitle>
+                <CardSubtitle className="purpletext" tag="h3">posted on {idea.posted} by {idea.poster}</CardSubtitle>
                 {/* <CardSubtitle tag="h4">tags</CardSubtitle>
                 <CardText>{idea.tags.map(tag => <div>#{tag}</div>)}</CardText> */}
-                <CardSubtitle tag="h3">
+                <CardSubtitle className="purpletext" tag="h3">
                     As a user, I want to be able to...
                 </CardSubtitle>
-                <CardSubtitle tag="h3">
+                <CardSubtitle className="purpletext" tag="h3">
                     ...{idea.user_story}
                 </CardSubtitle>
-                {idea.in_progress ? <Button disabled="true">{idea.dev} is developing this idea</Button> : <Button onClick={developIdea}>Develop this idea!</Button>}
-                <Button >Edit this idea</Button>
+                {idea.in_progress ? <Button disabled="true">someone is developing this idea</Button> : <a href={`mailto:${idea.poster_email}`}><Button onClick={developIdea}>Develop this idea!</Button></a>}
+                {/* <ModalExample buttonLabel="Edit this idea" action="edit" idea={idea}></ModalExample> */}
             </CardBody>
         </Card>
     )

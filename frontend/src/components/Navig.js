@@ -26,15 +26,12 @@ export default function Navig() {
             {isAuth === true ? (
                 <Fragment>
                     {' '}
-                    <NavbarBrand href="/ideas">DevDo</NavbarBrand>
+                    <NavbarBrand href="/ideas" id="site-header">DevDo</NavbarBrand>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
                             <NavLink href="/ideas">all ideas</NavLink>
                         </NavItem>
-                        <NavItem>
-                            <NavLink href="/ideas/new">submit your idea</NavLink>
-                        </NavItem>
-                        <ModalExample buttonLabel="test" />
+                        <ModalExample buttonLabel="submit your idea" action="create" />
                         <NavItem>
                         </NavItem>
                         <NavItem>

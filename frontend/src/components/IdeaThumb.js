@@ -9,10 +9,11 @@ export default function IdeaThumb({ idea }) {
     const url = `/ideas/${idea.id}`
     return (
 
-        <Card>
-            <CardBody>
-                <Link to={url}>
-                    <CardTitle tag="h3">{idea.title}</CardTitle>
+        <Card className="my-2">
+            <CardBody className="thumb">
+                <Link to={url} className="no-underline">
+                    <h2 className="transparent thumb">{idea.title}</h2>
+                    {/* <CardTitle tag="h3" className="thumb">{idea.title}</CardTitle> */}
                 </Link>
                 {idea.tags.map(tag => (
                     <Link to={`/ideas/${tag}`}>

@@ -102,7 +102,6 @@ export default function IdeaCreate({ modal, setModal, toggle }) {
 
     return (
         <div>
-            <h1>What's your idea?</h1>
             {error && <div className="alert alert-danger">Sorry, something went wrong. Please try again.</div>}
             <IdeaForm idea={idea} handleChange={handleChange} handleSubmit={handleSubmit}
             // handleChangeTags={handleChangeTags} 

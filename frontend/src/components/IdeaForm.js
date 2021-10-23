@@ -3,17 +3,19 @@ import { Button, Form, FormGroup, Input, Label, Modal, ModalHeader, ModalBody, M
 import { APIURL } from '../config'
 import { Redirect } from 'react-router-dom'
 
-export default function IdeaForm({ idea, handleSubmit, handleChange, handleChangeTags, onChangeAi }) {
+export default function IdeaForm({ idea, handleSubmit, handleChange }) {
+    console.log(`idea at idea form: ${idea.title}`)
     return (
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label for="title">What's your idea?</Label>
-                <Input type="text" name="title" id="title" placeholder="describe this app in a few words" value={idea.title} onChange={handleChange} required></Input>
+                <Input type="text" name="title" id="title" placeholder="Spectacular App Name" value={idea.title} onChange={handleChange} required></Input>
             </FormGroup>
             <FormGroup>
                 <Label for="user_story">As a user of this app, I want to...</Label>
                 <Input type="text" name="user_story" id="user_story" placeholder="...share, view, and comment on my friends' posts." value={idea.user_story} onChange={handleChange} required></Input>
             </FormGroup>
+
             {/* <FormGroup check>
                 <legend>tags:</legend>
                 <Label check>
@@ -57,7 +59,7 @@ export default function IdeaForm({ idea, handleSubmit, handleChange, handleChang
                     virtual reality (VR)
                 </Label>
             </FormGroup> */}
-            <Button>submit idea</Button>
+            <Button className="my-2">submit idea</Button>
         </Form>
     )
 }

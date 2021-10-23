@@ -1,3 +1,51 @@
+* {
+  /* background-color:#8a2be2; */
+  /* color: white;  */
+  text-decoration: none;
+}
+
 body {
+  background-color:blueviolet !important;
+}
+
+#root{
   background-color:blueviolet;
+}
+
+a, a:visited{
+  color: white;
+  text-decoration: none;
+}
+
+#modal-btn{
+  background-color: greenyellow;
+  color: blueviolet;
+}
+
+#site-header{
+  color: greenyellow;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.thumb{
+  background-color: white;
+  color: blueviolet;
+}
+
+/* .thumb:hover{
+  background-color: greenyellow;
+} */
+
+.no-underline{
+  text-decoration: none !important;
+}
+
+.transparent{
+  background-color: #fff;
+  color: blueviolet;
+}
+
+.purpletext{
+  color: blueviolet
 }

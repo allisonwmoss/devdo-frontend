@@ -1,32 +1,43 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Input } from 'reactstrap'
 import { APIURL } from '../config'
 import IdeaForm from './IdeaForm'
-export default function IdeaEdit({ modal, setModal, toggle }) {
-    const initialIdeaState = {
-        title: '',
-        tags: ''
-    }
-    const [idea, setIdea] = useState(initialIdeaState)
+
+export default function IdeaEdit({ modal, setModal, toggle, idea }) {
+    console.log(`idea at idea edit: ${idea.title}`)
+    const [editIdea, setEditIdea] = useState(null)
     const [createdId, setCreatedId] = useState(null)
     const [error, setError] = useState(false)
 
-    const handleChange = (e) => {
+    useEffect(() => {
+        const url = `${APIURL}/ideas/${idea.id}`
+        console.log(`idea at idea edit inside useEffect: ${idea.title}`)
+        fetch(url)
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .then(data => {
+                setEditIdea({
+                    data
+                })
+            })
+            .catch(() => {
+                setError(true)
+            })
+    }, [idea.id])
 
+    const handleChange = (e) => {
         e.persist()
-        setIdea({
-            ...idea,
+        setEditIdea({
+            ...editIdea,
             [e.target.name]: e.target.value
         })
-        console.log(idea)
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        const url = `${APIURL}/ideas/`
+        const url = `${APIURL}/ideas/${idea.id}`
         const stuffToSend = {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
                 'Authorization': `Token ${localStorage.getItem('token')}`
@@ -47,14 +58,13 @@ export default function IdeaEdit({ modal, setModal, toggle }) {
             })
     }
     if (createdId) {
-        return <Redirect to={`/ideas/${createdId}`} />
+        return <Redirect to={`/ideas`} />
     }
 
     return (
         <div>
-            <h1>What's your idea?</h1>
             {error && <div className="alert alert-danger">Sorry, something went wrong. Please try again.</div>}
-            <IdeaForm idea={idea} handleChange={handleChange} handleSubmit={handleSubmit}
+            <IdeaForm idea={editIdea} handleChange={handleChange} handleSubmit={handleSubmit}
             ></IdeaForm>
         </div>
 
