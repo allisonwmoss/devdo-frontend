@@ -18,12 +18,13 @@ a, a:visited{
 }
 
 #modal-btn{
-  background-color: greenyellow;
+  background-color: #4de81a;
   color: blueviolet;
+  font-weight: bold;
 }
 
 #site-header{
-  color: greenyellow;
+  color: #4de81a;
   font-weight: bold;
   font-size: 2rem;
 }
@@ -48,4 +49,13 @@ a, a:visited{
 
 .purpletext{
   color: blueviolet
+}
+
+.boldwhite{
+  color: white;
+  font-weight: bold
+}
+
+.bold{
+  font-weight: bold
 }

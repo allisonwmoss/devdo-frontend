@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { APIURL, FRONTURL } from '../config';
-
+import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 const Signup = () => {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
@@ -52,48 +52,50 @@ const Signup = () => {
     };
 
     return (
-        <div>
-            {loading === false && <h1>Signup</h1>}
+        <div className="container d-flex flex-column align-items-center">
+            {loading === false && <h1 className="boldwhite">Join DevDo</h1>}
             {error === true && <h2>Sorry, we couldn't create an account with those credentials.</h2>}
-            <form onSubmit={onSubmit}>
-                <label htmlFor='email'>Email address:</label> <br />
-                <input
-                    name='email'
-                    type='email'
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                    required
-                />{' '}
-                <br />
-                <label htmlFor='username'>Username:</label> <br />
-                <input
-                    name='username'
-                    type='username'
-                    value={username}
-                    onChange={e => setUsername(e.target.value)}
-                    required
-                />{' '}
-                <br />
-                <label htmlFor='password1'>Password:</label> <br />
-                <input
-                    name='password1'
-                    type='password'
-                    value={password1}
-                    onChange={e => setPassword1(e.target.value)}
-                    required
-                />{' '}
-                <br />
-                <label htmlFor='password2'>Confirm password:</label> <br />
-                <input
-                    name='password2'
-                    type='password'
-                    value={password2}
-                    onChange={e => setPassword2(e.target.value)}
-                    required
-                />{' '}
-                <br />
-                <input type='submit' value='Signup' />
-            </form>
+            <Form onSubmit={onSubmit}>
+                <FormGroup>
+                    <Label htmlFor='email' className="boldwhite">Email address:</Label> <br />
+                    <Input
+                        name='email'
+                        type='email'
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        required
+                    />{' '}
+                    <br />
+                    <Label htmlFor='username' className="boldwhite">Username:</Label> <br />
+                    <Input
+                        name='username'
+                        type='username'
+                        value={username}
+                        onChange={e => setUsername(e.target.value)}
+                        required
+                    />{' '}
+                    <br />
+                    <Label htmlFor='password1' className="boldwhite">Password:</Label> <br />
+                    <Input
+                        name='password1'
+                        type='password'
+                        value={password1}
+                        onChange={e => setPassword1(e.target.value)}
+                        required
+                    />{' '}
+                    <br />
+                    <Label htmlFor='password2' className="boldwhite">Confirm password:</Label> <br />
+                    <Input
+                        name='password2'
+                        type='password'
+                        value={password2}
+                        onChange={e => setPassword2(e.target.value)}
+                        required
+                    />{' '}
+                    <br />
+                </FormGroup>
+                <Button type="submit" id="modal-btn">Create account</Button>
+            </Form>
         </div>
     );
 };

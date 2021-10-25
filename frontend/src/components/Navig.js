@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import { FRONTURL } from '../config';
-import ModalExample from './Modal';
+import ModalPop from './Modal';
 import {
     Navbar,
     NavbarBrand,
@@ -29,13 +29,13 @@ export default function Navig() {
                     <NavbarBrand href="/ideas" id="site-header">DevDo</NavbarBrand>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/ideas">all ideas</NavLink>
+                            <NavLink href="/ideas" className="boldwhite">all ideas</NavLink>
                         </NavItem>
-                        <ModalExample buttonLabel="submit your idea" action="create" />
+                        <ModalPop buttonLabel="submit your idea" action="create" />
                         <NavItem>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/logout">log out</NavLink>
+                            <NavLink href="/logout" className="boldwhite">log out</NavLink>
                         </NavItem>
                     </Nav>
                 </Fragment>
@@ -43,7 +43,7 @@ export default function Navig() {
                 <Fragment>
                     {' '}
                     <Navbar>
-                        <NavbarBrand>
+                        <NavbarBrand id="site-header">
                             DevDo
                         </NavbarBrand>
                     </Navbar>

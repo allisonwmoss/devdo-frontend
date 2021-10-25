@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import IdeaCreate from './IdeaCreate';
 import IdeaEdit from './IdeaEdit';
-const ModalExample = (props) => {
+const ModalPop = (props) => {
     const {
         buttonLabel,
         // className
@@ -40,4 +40,4 @@ const ModalExample = (props) => {
 
 }
 
-export default ModalExample;
+export default ModalPop;

@@ -6,7 +6,7 @@ import {
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 import ModalExample from './Modal';
-
+import AllComments from './AllComments';
 
 export default function IdeaDetail({ match }) {
     const [deleted, setDeleted] = useState(false)
@@ -69,23 +69,21 @@ export default function IdeaDetail({ match }) {
             })
     }
 
-    console.log(`idea at idea detail: ${idea.title}`)
-
     return (
         <Card>
             <CardBody>
-                <CardTitle tag="h1" className="purpletext">{idea.title}</CardTitle>
-                <CardSubtitle className="purpletext" tag="h3">posted on {idea.posted} by {idea.poster}</CardSubtitle>
-                {/* <CardSubtitle tag="h4">tags</CardSubtitle>
-                <CardText>{idea.tags.map(tag => <div>#{tag}</div>)}</CardText> */}
-                <CardSubtitle className="purpletext" tag="h3">
+                <CardTitle tag="h1" className="purpletext bold my-3">{idea.title}</CardTitle>
+                <CardSubtitle className="purpletext my-3" tag="h5">posted on {idea.posted} by {idea.poster}</CardSubtitle>
+                <CardText>{idea.tags.map(tag => <Button className="mx-2 my-2" id="modal-btn">#{tag}</Button>)}</CardText>
+                <CardSubtitle className="purpletext my-3" tag="h3">
                     As a user, I want to be able to...
                 </CardSubtitle>
                 <CardSubtitle className="purpletext" tag="h3">
                     ...{idea.user_story}
                 </CardSubtitle>
-                {idea.in_progress ? <Button disabled="true">someone is developing this idea</Button> : <a href={`mailto:${idea.poster_email}`}><Button onClick={developIdea}>Develop this idea!</Button></a>}
+                {idea.in_progress ? <Button disabled="true" className="my-5">someone is developing this idea</Button> : <a href={`mailto:${idea.poster_email}`}><Button className="my-5" onClick={developIdea}>Develop this idea!</Button></a>}
                 {/* <ModalExample buttonLabel="Edit this idea" action="edit" idea={idea}></ModalExample> */}
+                {/* <AllComments idea={idea} /> */}
             </CardBody>
         </Card>
     )

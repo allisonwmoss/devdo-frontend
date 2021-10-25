@@ -48,37 +48,39 @@ const Login = () => {
     };
 
     return (
-        <div>
-            {loading === false && <h1>Login</h1>}
+        <div className="container d-flex flex-column align-items-center">
+            {loading === false && <h1 className="boldwhite">Log in</h1>}
             {error === true && <h2>Sorry, we couldn't log you in with those credentials.</h2>}
             {loading === false && (
-                <form onSubmit={onSubmit}>
-                    <label htmlFor='email'>Email address:</label> <br />
-                    <input
-                        name='email'
-                        type='email'
-                        value={email}
-                        required
-                        onChange={e => setEmail(e.target.value)}
-                    />{' '}
-                    <br />
-                    <label htmlFor='password'>Password:</label> <br />
-                    <input
-                        name='password'
-                        type='password'
-                        value={password}
-                        required
-                        onChange={e => setPassword(e.target.value)}
-                    />{' '}
-                    <br />
-                    <input type='submit' value='Login' />
-                </form>
+                <Form onSubmit={onSubmit}>
+                    <FormGroup>
+                        <Label htmlFor='email' className="boldwhite">Email address:</Label> <br />
+                        <Input
+                            name='email'
+                            type='email'
+                            value={email}
+                            required
+                            onChange={e => setEmail(e.target.value)}
+                        />{' '}
+                        <br />
+                        <Label htmlFor='password' className="boldwhite">Password:</Label> <br />
+                        <Input
+                            name='password'
+                            type='password'
+                            value={password}
+                            required
+                            onChange={e => setPassword(e.target.value)}
+                        />{' '}
+                        <br />
+                    </FormGroup>
+                    <Button type='submit' value='Login' id="modal-btn">Log in</Button>
+                </Form>
             )}
             {loading === false && (
-                <div>
-                    <h3>New to DevDo?</h3>
+                <div className="container d-flex flex-column align-items-center my-5">
+                    <h3 className="boldwhite">New to DevDo?</h3>
                     <Link to="/signup">
-                        <Button>Create account</Button>
+                        <Button className="thumb">Create account</Button>
                     </Link>
                 </div>
 

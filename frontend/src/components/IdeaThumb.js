@@ -17,7 +17,7 @@ export default function IdeaThumb({ idea }) {
                 </Link>
                 {idea.tags.map(tag => (
                     <Link to={`/ideas/${tag}`}>
-                        <Button>{tag}</Button>
+                        <Button className="mx-2" id="modal-btn">{tag}</Button>
                     </Link>
                 ))}
             </CardBody>

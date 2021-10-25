@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { APIURL, FRONTURL } from '../config';
-
+import { Button } from 'reactstrap'
 const Logout = () => {
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -29,16 +29,16 @@ const Logout = () => {
     };
 
     return (
-        <div>
+        <div className="container">
             {loading === true && (
                 <Fragment>
-                    <h1>loading please wait</h1>
+                    <h1>loading, please wait</h1>
                 </Fragment>
             )}
             {loading === false && (
                 <Fragment>
-                    <h1>Are you sure you want to log out?</h1>
-                    <input type='button' value='Logout' onClick={handleLogout} />
+                    <h1 className="boldwhite">Are you sure you want to log out?</h1>
+                    <Button value='Logout' onClick={handleLogout}>Log out</Button>
                 </Fragment>
             )}
         </div>
